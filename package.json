@@ -1,0 +1,42 @@
+{
+  "name": "scroll-container-microbundle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/ScrollContainer.js",
+  "source": "src/ScrollContainer.ts",
+  "scripts": {
+    "dev": "parcel src/demo/index.html",
+    "build": "microbundle",
+    "precommit": "lint-staged",
+    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash.debounce": "^4.0.4",
+    "@types/lodash.throttle": "^4.1.4",
+    "lint-staged": "^8.1.0",
+    "microbundle": "^0.9.0",
+    "parcel-bundler": "^1.11.0",
+    "prettier": "^1.15.3",
+    "stylus": "^0.54.5",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-config-standard": "^8.0.1"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

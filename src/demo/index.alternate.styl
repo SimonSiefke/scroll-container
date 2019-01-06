@@ -1,0 +1,20 @@
+[data-sc='root']
+  height 300px
+  max-width 300px
+
+[data-sc-initialized='false']
+  [data-sc='scrollbar-thumb-vertical']
+    opacity 0
+
+  [data-sc='scrollbar-vertical']
+    transform translateX(10px)
+
+[data-sc='scrollbar-vertical']
+  background gray
+  transform translateX(0)
+  transition transform 0.1s
+  width 10px
+
+[data-sc='scrollbar-thumb-vertical']
+  height 10px
+  transition opacity 0.5s
