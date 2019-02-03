@@ -1,6 +1,6 @@
 import throttle from 'lodash.throttle'
 import debounce from 'lodash.debounce'
-import clamp from './util/clamp'
+import clamp from '../src/util/clamp'
 import ResizeObserver from 'resize-observer-polyfill'
 
 export default function createScrollContainer({ root }: { root: HTMLElement }) {

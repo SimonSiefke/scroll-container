@@ -1,0 +1,7 @@
+old
+examples
+demo
+.travis.yml
+.*
+renovate.json
+Issues.md
