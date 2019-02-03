@@ -1,6 +1,6 @@
 {
   "name": "scroll-container",
-  "version": "0.0.0-semantically-released",
+  "version": "0.0.0-development",
   "description": "",
   "main": "dist/ScrollContainer.js",
   "source": "src/ScrollContainer.ts",
