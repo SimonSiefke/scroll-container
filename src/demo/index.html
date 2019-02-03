@@ -7,24 +7,68 @@
     <title>Document</title>
     <link rel="stylesheet" href="../ScrollContainer.styl" />
     <link rel="stylesheet" href="./index.styl" />
+    <style>
+      body {
+        margin: 0;
+      }
+      .inside {
+        height: 400px;
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
-    <div data-sc="root" data-sc-layout="ltr" data-sc-initialized="false">
-      <div role="presentation" aria-hidden="true" data-sc="scrollbar-vertical">
-        <div data-sc="scrollbar-track-vertical"><div data-sc="scrollbar-thumb-vertical"></div></div>
+    <div data-sc-role="root" class="demo">
+      <div data-sc-role="content">
+        <div class="inside">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempora cumque atque
+            doloribus, unde accusantium voluptatibus enim consequatur.
+          </p>
+          <br />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempora cumque atque
+            doloribus, unde accusantium voluptatibus enim consequatur.
+          </p>
+          <br />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempora cumque atque
+            doloribus, unde accusantium voluptatibus enim consequatur.
+          </p>
+          <br />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempora cumque atque
+            doloribus, unde accusantium voluptatibus enim consequatur.
+          </p>
+        </div>
       </div>
-      <div data-sc="content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempora cumque atque
-          doloribus, unde accusantium voluptatibus enim consequatur. Esse, pariatur iure?
-          Perspiciatis ullam consectetur maxime blanditiis, vero unde nemo aliquam. Expedita
-          quisquam cum voluptatum reprehenderit in asperiores unde tempora architecto ea recusandae
-          odio repudiandae, deleniti delectus. Adipisci, quidem dolores corrupti molestiae velit
-          eveniet alias, perferendis libero possimus tempore repudiandae reiciendis assumenda
-          pariatur ea mollitia? Neque error magni minus fugiat magnam?
-        </p>
+      <div role="presentation" aria-hidden="true" data-sc-role="scrollbar">
+        <div data-sc-role="scrollbar-track"><div data-sc-role="scrollbar-thumb"></div></div>
       </div>
     </div>
+
+    <!-- <div style="width:300px;max-height:300px;overflow-y: scroll;background:blue;">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempora cumque atque
+        doloribus, unde accusantium voluptatibus enim consequatur.
+      </p>
+      <br />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempora cumque atque
+        doloribus, unde accusantium voluptatibus enim consequatur.
+      </p>
+      <br />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempora cumque atque
+        doloribus, unde accusantium voluptatibus enim consequatur.
+      </p>
+      <br />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempora cumque atque
+        doloribus, unde accusantium voluptatibus enim consequatur.
+      </p>
+      <br />
+    </div> -->
     <script src="../ScrollContainer.ts"></script>
     <script src="./index.ts"></script>
   </body>

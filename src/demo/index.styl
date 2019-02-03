@@ -1,19 +1,20 @@
-[data-sc='root']
+.demo
   height 300px
   max-width 300px
 
-[data-sc-initialized='false']
-  [data-sc='scrollbar-thumb-vertical']
-    opacity 0
+*
+  word-break break-all
 
-[data-sc='scrollbar-vertical']
-  background gray
-  width 10px
+html
+  -webkit-font-smoothing antialiased
 
-[data-sc='scrollbar-thumb-vertical']
-  height 10px
-  transition opacity 0.3s
+.inside
+  height 400px
+  overflow hidden
 
-p
-  margin 0
-  padding 0
+.demo
+  background red
+
+[data-sc-role='content']
+  margin-right -100px
+  overflow-x hidden
