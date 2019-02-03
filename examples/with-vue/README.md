@@ -1,29 +1,10 @@
-# with-vue
+# Scroll Container with Vue
 
-## Project setup
-```
-npm install
-```
+[![Edit on Codesandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/SimonSiefke/scroll-container/tree/master/examples/with-vue)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Quickstart
 
-### Compiles and minifies for production
-```
-npm run build
-```
+```sh
 
-### Run your tests
-```
-npm run test
-```
 
-### Lints and fixes files
 ```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
