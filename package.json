@@ -1,55 +1,61 @@
 {
-  "name": "scroll-container-microbundle",
-  "version": "1.0.0",
+  "name": "scroll-container",
+  "version": "0.0.0-semantically-released",
   "description": "",
   "main": "dist/ScrollContainer.js",
   "source": "src/ScrollContainer.ts",
   "scripts": {
     "dev": "parcel src/demo/index.html",
-    "build": "rimraf dist && microbundle",
-    "precommit": "lint-staged",
-    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'"
+    "lint": "eslint . --ext .ts",
+    "build": "microbundle",
+    "semantic-release": "semantic-release"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Simon Siefke",
+  "license": "MIT",
   "devDependencies": {
-    "@cypress/webpack-preprocessor": "^4.0.2",
+    "@cypress/webpack-preprocessor": "^4.0.3",
     "@types/cypress": "^1.1.3",
     "@types/lodash.debounce": "^4.0.4",
     "@types/lodash.throttle": "^4.1.4",
-    "@typescript-eslint/parser": "^1.1.0",
-    "cypress": "^3.1.4",
-    "eslint": "^5.12.0",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-jsdoc": "^4.0.1",
-    "lint-staged": "^8.1.0",
+    "eslint": "^5.13.0",
+    "eslint-config-bitworkers": "^1.14.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.3",
     "microbundle": "^0.9.0",
     "parcel-bundler": "^1.11.0",
-    "prettier": "^1.16.1",
-    "prettier-config-bitworkers": "1.1.0",
+    "prettier": "^1.16.4",
+    "prettier-config-bitworkers": "^1.4.1",
     "rimraf": "^2.6.3",
+    "semantic-release": "^15.13.3",
     "stylus": "^0.54.5",
-    "ts-loader": "^5.3.2",
-    "tslint": "^5.12.0",
-    "tslint-config-prettier": "^1.17.0",
-    "tslint-config-standard": "^8.0.1",
-    "webpack": "^4.28.2"
+    "ts-loader": "^5.3.3",
+    "webpack": "^4.29.0"
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "node-fetch": "^2.3.0",
-    "resize-observer-polyfill": "^1.5.0"
+    "resize-observer-polyfill": "^1.5.1"
   },
   "prettier": {
     "semi": false,
     "singleQuote": true
   },
   "lint-staged": {
-    "{src,test}/**/*.ts": [
+    "*.ts": [
+      "eslint --fix",
       "prettier --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SimonSiefke/scroll-container.git"
   }
 }

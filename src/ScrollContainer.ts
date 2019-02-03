@@ -70,6 +70,16 @@ export default function SimpleBar($root: HTMLElement) {
   let scrollYTicking: boolean
 
   /**
+   * Positions the scrollbar thumb based on how much the content has been scrolled.
+   */
+  const positionScrollbar = () => {
+    const scrollOffset = $content.scrollTop
+    const scrollPercent = scrollOffset / (contentHeight - trackHeight)
+    const handleOffset = Math.floor((trackHeight - scrollbarThumbHeight) * scrollPercent)
+    $scrollbar.style.transform = `translateY(${handleOffset}px)`
+  }
+
+  /**
    * Sets all the static variables that don't change often (like content height) and positions the scrollbar.
    */
   const recalculate = () => {
@@ -78,16 +88,6 @@ export default function SimpleBar($root: HTMLElement) {
     scrollbarThumbHeight = Math.floor($track.scrollHeight ** 2 / $content.scrollHeight)
     $scrollbar.style.height = `${scrollbarThumbHeight}px`
     positionScrollbar()
-  }
-
-  /**
-   * Positions the scrollbar thumb based on how much the content has been scrolled.
-   */
-  const positionScrollbar = () => {
-    const scrollOffset = $content.scrollTop
-    const scrollPercent = scrollOffset / (contentHeight - trackHeight)
-    const handleOffset = Math.floor((trackHeight - scrollbarThumbHeight) * scrollPercent)
-    $scrollbar.style.transform = `translateY(${handleOffset}px)`
   }
 
   /**
