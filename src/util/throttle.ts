@@ -1,5 +1,5 @@
-export default function throttle(fn, limit) {
-  let inThrottle
+export default function throttle(fn: () => void, limit: number) {
+  let inThrottle: boolean
   return () => {
     if (!inThrottle) {
       fn()

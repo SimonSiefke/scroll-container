@@ -8,8 +8,7 @@ cache:
     # we also need to cache folder with Cypress binary
     - ~/.cache
 
-script:
-  - npm run build
+script: npm run build
 
 jobs:
   include:
@@ -20,4 +19,4 @@ jobs:
       deploy:
         provider: script
         skip_cleanup: true
-        script: npx semantic-release
+        script: npm run build && npx semantic-release
