@@ -1,3 +1,5 @@
+import throttle from 'lodash.throttle'
+
 /*
  *                                    Overview
  *                                    ‾‾‾‾‾‾‾‾
@@ -82,13 +84,13 @@ export default function SimpleBar($root: HTMLElement) {
   /**
    * Sets all the static variables that don't change often (like content height) and positions the scrollbar.
    */
-  const recalculate = () => {
+  const recalculate = throttle(() => {
     trackHeight = $track.scrollHeight
     contentHeight = $content.scrollHeight
     scrollbarThumbHeight = Math.floor($track.scrollHeight ** 2 / $content.scrollHeight)
     $scrollbar.style.height = `${scrollbarThumbHeight}px`
     positionScrollbar()
-  }
+  }, 100)
 
   /**
    * Animate the scrollbar.
@@ -118,4 +120,11 @@ export default function SimpleBar($root: HTMLElement) {
   recalculate()
   $content.addEventListener('scroll', onScrollY)
   $root.setAttribute('data-sc-initialized', 'true') // let css know that the scrollbar is ready
+  window.addEventListener('resize', recalculate)
+
+  return {
+    destroy() {
+      window.removeEventListener('resize', recalculate)
+    }
+  }
 }

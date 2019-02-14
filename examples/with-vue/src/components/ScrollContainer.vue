@@ -40,6 +40,7 @@
 
 <script lang="ts">
 import 'scroll-container/src/ScrollContainer.styl'
+import 'scroll-container/src/ScrollContainerDemo.styl'
 import SimpleBar from 'scroll-container'
 
 // const root = document.querySelector('[data-sc="root"]') as HTMLElement
