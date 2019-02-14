@@ -2,7 +2,7 @@ $padding = 20px // enough space to hide the native scrollbar
 
 [data-sc-role='root']
   // overflow hidden // hide the native scrollbar
-  position relative
+  position relative // needed?
 
 [data-sc-role='content']
   display block
@@ -11,15 +11,14 @@ $padding = 20px // enough space to hide the native scrollbar
   max-width 100% // Not required for horizontal scroll to trigger
   overflow scroll // Scroll on this element otherwise element can't have a padding applied properly
   padding-right $padding
-  position relative
+  position relative // so that the absolute positioned scrollbar stays inside the content
 
 [data-sc-role='scrollbar']
-  bottom 0
-  pointer-events none
-  position absolute
-  right 0
-  top 0
-  width 11px
+  bottom 0 // take up full height
+  pointer-events none // content below the scrollbar should be clickable?
+  position absolute // position it above the content
+  right 0 // default layout is ltr (left to right)
+  top 0 // take up full height
 
 [data-sc-role='scrollbar-track']
   height 100% // take up full height
