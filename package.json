@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "parcel src/demo/index.html",
     "lint": "eslint . --ext .ts",
-    "build": "microbundle",
+    "build": "microbundle --external all",
     "semantic-release": "semantic-release"
   },
   "keywords": [],
