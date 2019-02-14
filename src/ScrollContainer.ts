@@ -1,4 +1,4 @@
-import * as throttle from 'lodash.throttle'
+import throttle from 'lodash.throttle'
 
 /*
  *                                    Overview
