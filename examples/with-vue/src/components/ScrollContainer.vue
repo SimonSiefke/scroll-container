@@ -1,5 +1,5 @@
 <template>
-    <div data-sc-role="root" class="demo">
+    <div data-sc-role="root">
       <div data-sc-role="content">
         <div class="inside">
           <p>
@@ -24,13 +24,28 @@
         </div>
       </div>
       <div role="presentation" aria-hidden="true" data-sc-role="scrollbar">
-        <div data-sc-role="scrollbar-track"><div data-sc-role="scrollbar-thumb"></div></div>
+           <div data-sc-role="scrollbar-track"><div data-sc-role="scrollbar-thumb"></div></div>
       </div>
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import 'scroll-container/src/ScrollContainer.styl'
+import SimpleBar from 'scroll-container/src/ScrollContainer.ts'
+
+// const root = document.querySelector('[data-sc="root"]') as HTMLElement
+// createScrollContainer({ root })
 export default {
   name: 'ScrollContainer',
+  mounted(){
+document.querySelectorAll('[data-sc-role="root"]').forEach(SimpleBar)
+
+  }
 }
 </script>
+
+<style>
+[data-sc-role='root'] {
+  height: 300px;
+}
+</style>
